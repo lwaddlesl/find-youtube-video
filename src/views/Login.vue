@@ -139,7 +139,8 @@ export default {
       }
       .auth__form {
         .password {
-          .eye {
+          .eye,
+          .eye-off {
             position: absolute;
             right: 20px;
           }

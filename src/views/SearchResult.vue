@@ -7,8 +7,8 @@
       <span>{{ $store.state.resultsCount }}</span>
     </div>
     <div class="filter">
-      <img src="@/assets/search-result/list.svg" />
-      <img src="@/assets/search-result/grid.svg" />
+      <img @click="list" src="@/assets/search-result/list.svg" />
+      <img @click="grid" src="@/assets/search-result/grid.svg" />
     </div>
   </div>
 
@@ -39,10 +39,26 @@ export default {
     HeaderComponent,
     SearchVideo,
   },
+  methods: {
+    list() {
+      if (this.$store.state.query) {
+        let videos = document.querySelector(".videos__row");
+        let video = document.querySelector(".video");
+        videos.style.display = "block";
+      }
+    },
+    grid() {
+      if (this.$store.state.query) {
+        let videos = document.querySelector(".videos__row");
+        let video = document.querySelector(".video");
+        videos.style.display = "flex";
+      }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 #app {
   .search {
     margin-top: 0px;
@@ -52,7 +68,7 @@ export default {
     margin-bottom: 12px;
   }
   input {
-    width: 890px;
+    width: 60vw;
   }
 }
 .videos__line {
@@ -60,6 +76,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.filter {
+  img:hover {
+    cursor: pointer;
+  }
 }
 .videos__count {
   font-size: 16px;
