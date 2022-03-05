@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <HeaderComponent />
-    <SearchVideo />
+    <FavoriteComponent />
   </div>
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import SearchVideo from "@/components/SearchVideo.vue";
+import FavoriteComponent from "@/components/FavoriteComponent.vue";
 
 export default {
   name: "Header",
   components: {
     HeaderComponent,
-    SearchVideo,
+    FavoriteComponent,
   },
 };
 </script>
